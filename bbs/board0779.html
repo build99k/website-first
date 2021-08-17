@@ -248,11 +248,26 @@ var g5_cookie_domain = "";
 	</div>
 </div>
 
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"> </script>
+	<script type="text/javascript"> (function(){ emailjs.init("user_b7aCN0U93QcvbyU2iyotO"); })(); </script>
+
+	<script type="text/javascript">
+		function fn_sendEmail(templateParams){
+			emailjs.send('service_townHouse', 'template_zn4wkru', templateParams) .then(function(response) {
+				console.log('SUCCESS!', response.status, response.text);
+				}, function(error) {
+				console.log('FAILED...', error);
+			});
+
+		}
+
+
+	</script>
 
 
 <div class="sub61_con02">
-	<form name="order_quick" method="post" action="sub61_ok.php">
-	<input type="hidden" name="url" value="/bbs/board.php?bo_table=61">
+	<form name="order_quick" method="post" action="">
+<!--	<input type="hidden" name="url" value="/bbs/board.php?bo_table=61">-->
 	<div id="sub61_select">
 		<p class="sub61_text01"><span style="font-weight:bold">01.</span> 어떤 상담이 필요하신가요?</p>
 		<p><span style="font-size:1.25em; letter-spaicng:-1px;">
@@ -283,7 +298,7 @@ var g5_cookie_domain = "";
 					<p class="sub61_text02">성함</p>
 				</div>
 				<div class="sub61_form_left-2">
-					<input class="sub61_input01" type="text" name="name" value="" maxlength="50">
+					<input class="sub61_input01" type="text" name="userName" value="" maxlength="50">
 				</div>
 			</div>
 			<div class="sub61_form_left-0">
@@ -302,7 +317,7 @@ var g5_cookie_domain = "";
 					<p class="sub61_text02">이메일</p>
 				</div>
 				<div class="sub61_form_left-2">
-					<input class="sub61_input01" type="text" name="email" value="" maxlength="50">
+					<input class="sub61_input01" type="text" name="userEmail" value="" maxlength="50">
 				</div>
 			</div>
 			<div class="sub61_form_left-0">
@@ -310,7 +325,7 @@ var g5_cookie_domain = "";
 					<p class="sub61_text02">상담내용</p>
 				</div>
 				<div class="sub61_form_left-2">
-					<textarea class="sub61_input03" rows="10" name="content"  placeholder="  상담내용을 입력해주세요."></textarea>
+					<textarea class="sub61_input03" rows="10" name="message"  placeholder="  상담내용을 입력해주세요."></textarea>
 				</div>
 			</div>
 			<div class="sub61_btn">
@@ -359,7 +374,7 @@ var g5_cookie_domain = "";
             f.type.focus();
             return;
         }
-        if (!f.name.value) {
+        if (!f.userName.value) {
             alert("이름을 입력해주세요.");
             f.name.focus();
             return;
@@ -379,20 +394,28 @@ var g5_cookie_domain = "";
             f.phone3.focus();
             return;
         }
-        if (!f.email.value) {
+        if (!f.userEmail.value) {
             alert("이메일을 입력해주세요.");
-            f.email.focus();
+            f.userEmail.focus();
             return;
         }
-		if (!f.content.value) {
+		if (!f.message.value) {
             alert("상담내용을 입력해주세요.");
-            f.content.focus();
+            f.message.focus();
             return;
         }
 
-		f.phone.value = f.phone1.value + "-" + f.phone2.value + "-" + f.phone3.value;
+		var data = {
+			type : f.type.value,
+			userName : f.userName.value,
+			userEmail : f.userEmail.value,
+			userContact :  f.phone1.value + "-" + f.phone2.value + "-" + f.phone3.value,
+			message : f.message.value,
+		}
+		fn_sendEmail(data);
+		// f.submit();
 
-		f.submit();
+
 	}
 </script></div>
 
