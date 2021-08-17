@@ -255,6 +255,7 @@ var g5_cookie_domain = "";
 		function fn_sendEmail(templateParams){
 			emailjs.send('service_townHouse', 'template_zn4wkru', templateParams) .then(function(response) {
 				console.log('SUCCESS!', response.status, response.text);
+				alert("문의내용이 접수되었습니다.");
 				}, function(error) {
 				console.log('FAILED...', error);
 			});
@@ -414,7 +415,6 @@ var g5_cookie_domain = "";
 		}
 		fn_sendEmail(data);
 		// f.submit();
-
 
 	}
 </script></div>
