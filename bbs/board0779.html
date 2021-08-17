@@ -20,6 +20,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <title>고객센터 1 페이지 | 가든코트양평  In 두메향기</title>
 <link rel="stylesheet" href="../css/default9e0f.css?ver=191202">
+	<link rel="stylesheet" href="../css/map.css">
 <link rel="stylesheet" href="../js/font-awesome/css/font-awesome.min9e0f.css?ver=191202">
 <!--[if lte IE 8]>
 <script src="../js/html5.js"></script>
@@ -163,7 +164,7 @@ var g5_cookie_domain = "";
 			$(".submenu07").click(function(){
 				$(".submenu07").next("div").stop().slideToggle();
 			});
-			
+
 			$(".submenu_wrap").css("height",$("html,body").height());
 		});
 
@@ -176,7 +177,7 @@ var g5_cookie_domain = "";
 		function menu_open(){
 			var sub = $(".submenu_wrap");
 			sub.css("height",$("html,body").height());
-			
+
 			if(sub.css("left") == "-620px"){
 				sub.animate({left:"0px"},500);
 				$("#cloudlayer").css("height",$("html,body").height());
@@ -338,26 +339,44 @@ var g5_cookie_domain = "";
 			<p class="sub61_text01"><span style="font-weight:bold">03.</span> 미팅이 필요하세요?</p>
 			<p class="sub61_text03"><img src="../images/sub43-1.png"> 경기도 양평군 양서면 목왕로592번길 62-59 일원 </p>
 			<p style="padding-top:20px">
-				<!-- * 카카오맵 - 지도퍼가기 -->
-				<!-- 1. 지도 노드 -->
-				<div id="daumRoughmapContainer1606279881471" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+			<div id="map" style="width:500px;height:400px;"></div>
+			<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4af85d3f7100e47a38737fa5ffc6b64c"></script>
+			<script>
+				var container = document.getElementById('map');
+				var options = {
+					center: new kakao.maps.LatLng(36.309472864490544, 127.4521469331208),
+					level: 3
+				};
+				var map = new kakao.maps.Map(container, options);
+				// 마커가 표시될 위치입니다
+				var markerPosition  = new kakao.maps.LatLng(36.309472864490544, 127.4521469331208);
 
-				<!--
-					2. 설치 스크립트
-					* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
-				-->
-				<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+				// 마커를 생성합니다
+				var marker = new kakao.maps.Marker({
+					position: markerPosition
+				});
 
-				<!-- 3. 실행 스크립트 -->
-				<script charset="UTF-8">
-					new daum.roughmap.Lander({
-						"timestamp" : "1606279881471",
-						"key" : "234ys",
-						"mapWidth" : "100%",
-						"mapHeight" : "320"
-					}).render();
-				</script>	
+				// 마커가 지도 위에 표시되도록 설정합니다
+				marker.setMap(map);
+
+				// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+				// marker.setMap(null);
+
+				var iwContent = '<div class="roughmap_maker_label" style="top: -9px; left: 1px;"><span class="roughmap_lebel_text">대전광역시 동구 가오동 140-16번지</span></div>'
+				var iwPosition = new kakao.maps.LatLng(36.309472864490544, 127.4521469331208); //인포윈도우 표시 위치입니다
+
+				// 인포윈도우를 생성합니다
+				var infowindow = new kakao.maps.InfoWindow({
+					position : iwPosition,
+					content : iwContent
+				});
+
+				// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+				infowindow.open(map, marker);
+
+			</script>
 			</p>
+
 			<p class="sub61_text03" style="padding-top:20px"><img src="../images/sub43-2.png"> 1600-8507 &nbsp;&nbsp;&nbsp;&nbsp;<img src="../images/sub61-3.png"> hpointlab@naver.com </p>
 		</div>
 	</div>
@@ -366,9 +385,9 @@ var g5_cookie_domain = "";
 
 <script>
 	function order_quick() {
-		
+
         var f = document.forms.order_quick;
-		
+
 		if (!f.type.value) {
             alert("문의유형을 선택해주세요.");
             f.type.focus();
@@ -421,7 +440,7 @@ var g5_cookie_domain = "";
 
 
 <div id="sub_board3">
-	
+
 
 </div>
 
@@ -462,7 +481,7 @@ $(function() {
 <!-- 공통 호출 하단 스크립트 : 모든페이지 하단 설치 -->
 <!-- PlayD TERA Log Script v1.2 -->
 <script>
-var _nSA=(function(_g,_s,_p,_d,_i,_h){ 
+var _nSA=(function(_g,_s,_p,_d,_i,_h){
  if(_i.wgc!=_g){_i.wgc=_g;_i.wrd=(new Date().getTime());
  var _sc=_d.createElement('script');_sc.src=_p+'//sas.nsm-corp.com/'+_s+'gc='+_g+'&rd='+_i.wrd;
  var _sm=_d.getElementsByTagName('script')[0];_sm.parentNode.insertBefore(_sc, _sm);} return _i;
@@ -477,7 +496,6 @@ var _nSA=(function(_g,_s,_p,_d,_i,_h){
 
 </body>
 
-<!-- Mirrored from gardencourtyp.co.kr/bbs/board.php?bo_table=61 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Aug 2021 11:33:31 GMT -->
 </html>
 
 <!-- 사용스킨 : html -->
