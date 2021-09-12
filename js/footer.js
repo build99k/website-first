@@ -1,7 +1,7 @@
 $(function() {
   $("#fot_warp").html('<div class="fot">'
       + '<div class="fot_logo">'
-      + '<img src="./images/fot_logo.png">'
+      + '<img src="../images/fot_logo.png">'
       + '</div>'
       + '<div class="fot_data">'
       + '<div class="fot_data_left">'
