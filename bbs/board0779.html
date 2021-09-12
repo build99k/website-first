@@ -211,11 +211,12 @@ var g5_cookie_domain = "";
 
 	<script type="text/javascript">
 		function fn_sendEmail(templateParams){
-			emailjs.send('service_townHouse', 'template_zn4wkru', templateParams) .then(function(response) {
+			emailjs.send('service_palaceHill', 'template_zn4wkru', templateParams) .then(function(response) {
 				console.log('SUCCESS!', response.status, response.text);
 				alert("문의내용이 접수되었습니다.");
 				}, function(error) {
 				console.log('FAILED...', error);
+				alert("오류가 발생하였습니다. 새로고침 후 다시 시도해주세요");
 			});
 
 		}
