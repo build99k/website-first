@@ -210,7 +210,40 @@ $(document).ready(function()
 	</div>
 </div>
 
+<!-- 팝업레이어 시작 { -->
+<div id="hd_pop">
+	<h2>팝업레이어 알림</h2>
 
+
+	<div id="hd_pops_1" class="hd_pops" style="top:180px;left:150px">
+		<div class="hd_pops_con" style="width:900px;height:400px">
+			<p><img src="http://gardencourt.whoawho.com/data/editor/2012/b8789ca6bde0168c3a24b53014e0e3d8_1606813035_2153.png" title="b8789ca6bde0168c3a24b53014e0e3d8_1606813035_2153.png" alt="b8789ca6bde0168c3a24b53014e0e3d8_1606813035_2153.png" /><br style="clear:both;" /> </p>        </div>
+		<div class="hd_pops_footer">
+			<button class="hd_pops_reject hd_pops_1 24"><strong>24</strong>시간 동안 다시 열람하지 않습니다.</button>
+			<button class="hd_pops_close hd_pops_1">닫기</button>
+		</div>
+	</div>
+
+
+</div>
+
+<script>
+	$(function() {
+		$(".hd_pops_reject").click(function() {
+			var id = $(this).attr('class').split(' ');
+			var ck_name = id[1];
+			var exp_time = parseInt(id[2]);
+			$("#"+id[1]).css("display", "none");
+			set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
+		});
+		$('.hd_pops_close').click(function() {
+			var idb = $(this).attr('class').split(' ');
+			$('#'+idb[1]).css('display','none');
+		});
+		$("#hd").css("z-index", 1000);
+	});
+</script>
+<!-- } 팝업레이어 끝 -->
 
 <link rel="stylesheet" href="css/swiper-bundle.css">
 
