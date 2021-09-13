@@ -1130,7 +1130,7 @@ box-sizing:content-box;
 .select.is-open .placeholder:after { content: '\f077';}
 .select.select--white .placeholder02 {color: #5a5a5a;}
 #slide_menu{position:absolute;top:0;width:85%;height:100%;background:#fafafa;}
-#slide_menu .logo_wrap{width:100%;height:80px;background:#fff;}
+#slide_menu .logo_wrap{width:100%;height:90px;background:#fff;}
 #slide_menu .m_list{width:100%;margin:0 auto;; padding:0;list-style:none;}
 #slide_menu .m_list li{width:50%;float:left;height:100px;color:#fff;text-align:center;font-size:1.1em;background:#1d9cdf;font-weight:bold;letter-spacing:-1px;}
 #slide_menu .m_list li a{text-decoration: none;}
