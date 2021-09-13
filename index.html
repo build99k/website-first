@@ -224,6 +224,11 @@
 
 <script>
   $(function () {
+
+    if(get_cookie("hd_pops_1")){
+     $("#hd_pop").css("display","none");
+    }
+
     $(".hd_pops_reject").click(function () {
       var id = $(this).attr('class').split(' ');
       var ck_name = id[1];
