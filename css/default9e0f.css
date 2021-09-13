@@ -521,7 +521,7 @@ box-sizing:content-box;
 .main_hr02{width:100px; border:1px solid #fff; margin:0 auto;}
 
 
-.smssend {position:fixed; width:150px; right:0; top:200px;  margin-top:0; z-index:20;}
+.smssend {position:fixed; width:150px; right:0; top:300px;  margin-top:0; z-index:20;}
 .smssend ul li{padding:8px 0}
 
 .smssend2 {position:fixed; width:200px; right:0; top:490px;  margin-top:0; z-index:20;}
