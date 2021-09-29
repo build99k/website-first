@@ -210,9 +210,10 @@ var g5_cookie_domain = "";
 
 	<script type="text/javascript">
 		function fn_sendEmail(templateParams){
+
 			emailjs.send('service_palaceHill', 'template_zn4wkru', templateParams) .then(function(response) {
 				console.log('SUCCESS!', response.status, response.text);
-                document.location.href = "/bbs/board0780.html";
+                document.location.href = "board0780.html";
 				// alert("문의내용이 접수되었습니다.");
 				}, function(error) {
 				console.log('FAILED...', error);
