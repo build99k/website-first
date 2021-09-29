@@ -205,141 +205,17 @@ var g5_cookie_domain = "";
 	</div>
 </div>
 
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"> </script>
-	<script type="text/javascript"> (function(){ emailjs.init("user_b7aCN0U93QcvbyU2iyotO"); })(); </script>
-
-	<script type="text/javascript">
-		function fn_sendEmail(templateParams){
-			emailjs.send('service_palaceHill', 'template_zn4wkru', templateParams) .then(function(response) {
-				console.log('SUCCESS!', response.status, response.text);
-                document.location.href = "/bbs/board0780.html";
-				// alert("문의내용이 접수되었습니다.");
-				}, function(error) {
-				console.log('FAILED...', error);
-				alert("오류가 발생하였습니다. 새로고침 후 다시 시도해주세요");
-			});
-
-		}
-
-
-	</script>
-
-
 <div class="sub61_con02">
-	<form name="order_quick" method="post" actRion="">
-<!--	<input type="hidden" name="url" value="/bbs/board.php?bo_table=61">-->
 	<div id="sub61_select">
-		<p class="sub61_text01"><span style="font-weight:bold">01.</span> 어떤 상담이 필요하신가요?</p>
-		<p><span style="font-size:1.25em; letter-spaicng:-1px;">
-		<input type="radio" name="type" value="분양문의 " /> 분양문의 &nbsp;
-		<input type="radio" name="type" value="전세문의" /> 전세문의&nbsp;
-		<input type="radio" name="type" value="기타문의" /> 기타문의&nbsp;
-		</span>
-		</p><br><br>
-	</div>
-
-	<hr>
-
-	<div class="sub61_form">
-		<div class="sub61_form_left">
-			<p class="sub61_text01"><span style="font-weight:bold">02.</span> 기본정보를 알려주세요.</p>
-			<!--
-			<div class="sub61_form_left-0">
-				<div class="sub61_form_left-1">
-					<p class="sub61_text02">회사명</p>
-				</div>
-				<div class="sub61_form_left-2">
-					<input class="sub61_input01" type="text" name="company" value="" maxlength="50">
-				</div>
-			</div>
-			-->
-			<div class="sub61_form_left-0">
-				<div class="sub61_form_left-1">
-					<p class="sub61_text02">성함</p>
-				</div>
-				<div class="sub61_form_left-2">
-					<input class="sub61_input01" type="text" name="userName" value="" maxlength="50">
-				</div>
-			</div>
-			<div class="sub61_form_left-0">
-				<div class="sub61_form_left-1">
-					<p class="sub61_text02">연락처</p>
-				</div>
-				<div class="sub61_form_left-2">
-					<input class="sub61_input02" type="text" name="phone1" value="" maxlength="4">&nbsp;-&nbsp;
-					<input class="sub61_input02" type="text" name="phone2" value="" maxlength="4">&nbsp;-&nbsp;
-					<input class="sub61_input02" type="text" name="phone3" value="" maxlength="4">
-					<input type="hidden" name="phone" value="">
-				</div>
-			</div>
-			<div class="sub61_form_left-0">
-				<div class="sub61_form_left-1">
-					<p class="sub61_text02">이메일</p>
-				</div>
-				<div class="sub61_form_left-2">
-					<input class="sub61_input01" type="text" name="userEmail" value="" maxlength="50">
-				</div>
-			</div>
-			<div class="sub61_form_left-0">
-				<div class="sub61_form_left-1">
-					<p class="sub61_text02">상담내용</p>
-				</div>
-				<div class="sub61_form_left-2">
-					<textarea class="sub61_input03" rows="10" name="message"  placeholder="  상담내용을 입력해주세요."></textarea>
-				</div>
-			</div>
-			<div class="sub61_btn">
-				<ul>
-					<a href="javascript:order_quick();"><li>상담신청</li></a>
-				</ul>
-			</div>
+		<p style="text-align: center; font-size:20px;"><span style="font-weight:bold">문의사항이 접수되었습니다.</span>
+		</p>
+		<div class="main_con04-4_btn">
+			<a href="/index.html">홈으로가기</a>
 		</div>
-		<div class="sub61_form_right">
-			<p class="sub61_text01"><span style="font-weight:bold">03.</span> 미팅이 필요하세요?</p>
-			<p class="sub61_text03"><img src="../images/sub43-1.png"> 대전광역시 동구 가오동 140-16번지 </p>
-			<p style="padding-top:20px">
-			<div id="map" style="width:500px;height:400px;"></div>
-			<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=4af85d3f7100e47a38737fa5ffc6b64c"></script>
-			<script>
-				var container = document.getElementById('map');
-				var options = {
-					center: new kakao.maps.LatLng(36.309472864490544, 127.4521469331208),
-					level: 3
-				};
-				var map = new kakao.maps.Map(container, options);
-				// 마커가 표시될 위치입니다
-				var markerPosition  = new kakao.maps.LatLng(36.309472864490544, 127.4521469331208);
-
-				// 마커를 생성합니다
-				var marker = new kakao.maps.Marker({
-					position: markerPosition
-				});
-
-				// 마커가 지도 위에 표시되도록 설정합니다
-				marker.setMap(map);
-
-				// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
-				// marker.setMap(null);
-
-				var iwContent = '<div class="roughmap_maker_label" style="top: -9px; left: 1px;"><span class="roughmap_lebel_text">대전광역시 동구 가오동 140-16번지</span></div>'
-				var iwPosition = new kakao.maps.LatLng(36.309472864490544, 127.4521469331208); //인포윈도우 표시 위치입니다
-
-				// 인포윈도우를 생성합니다
-				var infowindow = new kakao.maps.InfoWindow({
-					position : iwPosition,
-					content : iwContent
-				});
-
-				// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-				infowindow.open(map, marker);
-
-			</script>
-			</p>
-
-			<p class="sub61_text03" style="padding-top:20px"><img src="../images/sub43-2.png"> 1522-6685 &nbsp;&nbsp;&nbsp;&nbsp;<img src="../images/sub61-3.png"> sungkun915@gmail.com </p>
-		</div>
+		<p></p>
+		<br><br>
 	</div>
-	</form>
+</div>
 
 
 <script>
